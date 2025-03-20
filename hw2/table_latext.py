@@ -1,7 +1,8 @@
 from functools import reduce
+from typing import List
 
 
-def generate_latex_table(data):
+def generate_latex_table(data: List):
     if not data:
         return ""
 

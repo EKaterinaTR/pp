@@ -1,11 +1,10 @@
+from typing import List
+
 from hw2.table_latext import generate_latex_table
 
 
-def save_table(data, name_file):
-    # Генерация LaTeX кода для таблицы
+def save_table(data:List, name_file:str):
     latex_code = generate_latex_table(data)
-
-    # Сохранение результата в .tex файл
     with open(f"artifacts/{name_file}.tex", "w", encoding="utf-8") as f:
         f.write(latex_code)
 
