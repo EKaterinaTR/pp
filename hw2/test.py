@@ -1,6 +1,6 @@
 from typing import List
 
-from hw2.generator_latex.gen_latext import generate_latex_table, create_doc_latex
+from hw2.generator_la.generator_latex.gen_latext import create_doc_latex, generate_latex_table
 
 
 def save_table(data:List, name_file:str):

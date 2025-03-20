@@ -2,11 +2,11 @@ from setuptools import setup, find_packages
 
 setup(
     name="latex_generator_ts",
-    version="0.1.0",
+    version="0.4.0",
     author="Katya Ts",
     author_email="ekaterinatsr@gmail.com",
     description="A library for generating LaTeX tables and images.",
-    packages=find_packages(),
+    packages=['hw2/generator_la/generator_latex'],
     install_requires=[],
     classifiers=[
         "Programming Language :: Python :: 3",
