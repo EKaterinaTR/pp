@@ -8,8 +8,7 @@ def generate_latex_table(data: List):
 
     columns = len(data[0])
 
-    latex_table = f"\\begin{{document}}\\begin{{tabular}}{{|{'|'.join(['c'] * columns)}|}}\n\\hline\n"
-
+    latex_table = f"\\begin{{tabular}}{{|{'|'.join(['c'] * columns)}|}}\n\\hline\n"
 
     rows = reduce(
         lambda acc, row: acc + f"{' & '.join(map(str, row))} \\\\\n\\hline\n",
@@ -17,6 +16,14 @@ def generate_latex_table(data: List):
         latex_table
     )
 
-    latex_table = rows + "\\end{tabular}\\end{document}"
+    latex_table = rows + "\\end{tabular}"
 
     return latex_table
+
+
+def create_doc_latex(text: str):
+    return '\\begin{document}' + text + '\\end{document}'
+
+
+def generate_latex_image(image_path: str):
+    return f"\\includegraphics{{{image_path}}}"
