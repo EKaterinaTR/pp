@@ -1,0 +1,4 @@
+Material: unknown
+1 -7 -3
+-5 -1 8
+-3 -2 -5
