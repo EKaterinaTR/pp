@@ -13,5 +13,23 @@ class HashMixin:
 
 
 class HashMatrix(HashMixin,Matrix):
+    _cache = {}
+    use_cache = False
     def __matmul__(self, other):
-        return super().__matmul__(other)
+        """Кэшированное матричное умножение с ручным кэшированием"""
+        cache_key = (hash(self), hash(other), self.cols)  # Ключ кэша
+
+
+        if self.cols != other.rows:
+                raise ValueError("Number of columns of the first matrix must equal the number of rows of the second")
+
+        if cache_key in self._cache and self.use_cache:
+            print("Using cached result")
+            return self._cache[cache_key]
+
+        result = super().__matmul__(other)
+
+        self._cache[cache_key] = result
+        return result
+
+
