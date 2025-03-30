@@ -18,7 +18,7 @@ class Matrix:
             [self.data[i][j] + other.data[i][j] for j in range(self.cols)]
             for i in range(self.rows)
         ]
-        return Matrix(result)
+        return self.__class__(result)
 
     def __mul__(self, other):
         if self.rows != other.rows or self.cols != other.cols:
@@ -27,7 +27,7 @@ class Matrix:
             [self.data[i][j] * other.data[i][j] for j in range(self.cols)]
             for i in range(self.rows)
         ]
-        return Matrix(result)
+        return self.__class__(result)
 
     def __matmul__(self, other):
         if self.cols != other.rows:
@@ -39,7 +39,7 @@ class Matrix:
             ]
             for i in range(self.rows)
         ]
-        return Matrix(result)
+        return self.__class__(result)
 
     def save_to_file(self, filename):
         with open(filename, 'w') as f:

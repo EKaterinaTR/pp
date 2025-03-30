@@ -1,0 +1,3 @@
+Hash(A) = Hash(C) = 76
+Hash(AB) = 488
+Hash(CD) = 536
